@@ -300,3 +300,48 @@ This content is hidden until expanded.
 ```
 
 **Expected result:** GitHub displays a collapsible section. This is GitHub-specific HTML, so test it separately from standard CommonMark.
+
+### Python Code Block
+
+**CommonMark / GitHub:** A fenced code block can specify a language. Syntax highlighting depends on the renderer.
+
+**Markdown source:**
+
+````markdown
+```python
+print("Hello, world!")
+```
+````
+
+**Expected result:** A code block containing Python code. GitHub normally highlights the Python syntax.
+
+### Bash Code Block
+
+**CommonMark / GitHub:** The language identifier is `bash`.
+
+**Markdown source:**
+
+````markdown
+```bash
+echo "Hello, world!"
+```
+````
+
+**Expected result:** A code block containing Bash code. GitHub normally highlights the syntax.
+
+### JSON Code Block
+
+**CommonMark / GitHub:** The language identifier is `json`.
+
+**Markdown source:**
+
+````markdown
+```json
+{
+  "course": "Data Integration",
+  "lab": 1
+}
+```
+````
+
+**Expected result:** A code block containing JSON. GitHub normally highlights the syntax.
