@@ -208,3 +208,95 @@ Record at least three things you tested that did not work as expected. Explain w
 3. **Problem:** [Describe your third issue.]
    **Solution:** [Describe how you solved it.]
 
+### Line Breaks
+
+**Markdown source:**
+
+```markdown
+First line  
+Second line
+```
+
+**Expected result:** The text appears on two separate lines. Two spaces at the end of the first line create a line break in CommonMark.
+
+### Links to Sections
+
+**Markdown source:**
+
+```markdown
+[Go to Text Formatting](#1-text-formatting)
+```
+
+**Expected result:** Clicking the link jumps to the Text Formatting section on GitHub.
+
+### Images with Alternative Text
+
+**Markdown source:**
+
+```markdown
+![A description of the image](https://example.com/image.png)
+```
+
+**Expected result:** The alternative text describes the image if it cannot be displayed.
+
+### Nested Blockquotes
+
+**Markdown source:**
+
+```markdown
+> First level
+>
+> > Second level
+```
+
+**Expected result:** A quotation inside another quotation.
+
+### Aligned Tables
+
+**Markdown source:**
+
+```markdown
+| Left | Center | Right |
+| :--- | :---: | ---: |
+| A | B | C |
+```
+
+**Expected result:** The first column is left-aligned, the second centered, and the third right-aligned.
+
+### HTML Comments
+
+**Markdown source:**
+
+```markdown
+<!-- This comment is not normally visible in the rendered page. -->
+Visible text.
+```
+
+**Expected result:** Only "Visible text." appears in the rendered page.
+
+### Footnotes (GitHub)
+
+**Markdown source:**
+
+```markdown
+Here is a statement with a footnote.[^1]
+
+[^1]: This is the footnote.
+```
+
+**Expected result:** GitHub renders a footnote reference and its corresponding note. Test whether the same syntax works in CommonMark Dingus.
+
+### Collapsible Section (GitHub)
+
+**Markdown source:**
+
+```html
+<details>
+<summary>Show details</summary>
+
+This content is hidden until expanded.
+
+</details>
+```
+
+**Expected result:** GitHub displays a collapsible section. This is GitHub-specific HTML, so test it separately from standard CommonMark.
