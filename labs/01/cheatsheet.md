@@ -1,3 +1,4 @@
+
 # Markdown Cheat Sheet
 
 ## Table of Contents
@@ -28,19 +29,58 @@
 
 **Expected result:** Three headings with decreasing sizes.
 
+**CommonMark / GitHub**
+
+### Paragraphs and Line Breaks
+
+**Explanation:** A blank line separates paragraphs. Two spaces at the end of a line create a line break.
+
+**Markdown source:**
+
+```markdown
+First paragraph.
+
+Second paragraph.
+
+First line  
+Second line
+```
+
+**Expected result:** Two paragraphs and a line break between the last two lines.
+
+**CommonMark / GitHub**
+
 ### Bold, Italic and Strikethrough
 
-**Explanation:** Use special characters around text to change its appearance.
+**Explanation:** Special characters change the appearance of text.
 
 **Markdown source:**
 
 ```markdown
 **Bold text**
 *Italic text*
+***Bold and italic text***
 ~~Strikethrough text~~
 ```
 
-**Expected result:** The first line is bold, the second italic, and the third crossed out.
+**Expected result:** Bold, italic, bold and italic, and crossed-out text.
+
+**CommonMark:** Bold and italic work.  
+**GitHub:** Strikethrough also works.
+
+### Escaping Characters
+
+**Explanation:** A backslash prevents Markdown characters from being interpreted as formatting.
+
+**Markdown source:**
+
+```markdown
+\*This text is not italic\*
+```
+
+**Expected result:** The asterisks appear literally.
+
+**CommonMark / GitHub**
 
 ### Inline Code
 
@@ -53,6 +93,8 @@ Use `print("Hello")` to display text in Python.
 ```
 
 **Expected result:** The Python command appears as inline code.
+
+**CommonMark / GitHub**
 
 ## 2. Lists
 
@@ -68,6 +110,8 @@ Use `print("Hello")` to display text in Python.
 
 **Expected result:** Three bullet points.
 
+**CommonMark / GitHub**
+
 ### Ordered List
 
 **Markdown source:**
@@ -79,6 +123,8 @@ Use `print("Hello")` to display text in Python.
 ```
 
 **Expected result:** A numbered list with three items.
+
+**CommonMark / GitHub**
 
 ### Nested List
 
@@ -93,6 +139,8 @@ Use `print("Hello")` to display text in Python.
 
 **Expected result:** Two main items, with two sub-items under Data.
 
+**CommonMark / GitHub**
+
 ### Task List
 
 **Markdown source:**
@@ -104,9 +152,11 @@ Use `print("Hello")` to display text in Python.
 
 **Expected result:** A checked item and an unchecked item on GitHub.
 
+**GitHub**
+
 ## 3. Links and Images
 
-### Link
+### Inline Link
 
 **Markdown source:**
 
@@ -116,7 +166,47 @@ Use `print("Hello")` to display text in Python.
 
 **Expected result:** A clickable link to GitHub.
 
-### Image
+**CommonMark / GitHub**
+
+### Reference-Style Link
+
+**Markdown source:**
+
+```markdown
+[GitHub][website]
+
+[website]: https://github.com
+```
+
+**Expected result:** A clickable link using a reference definition.
+
+**CommonMark / GitHub**
+
+### Relative Link to Another File
+
+**Markdown source:**
+
+```markdown
+[Lab 01](README.md)
+```
+
+**Expected result:** A link to a file relative to the current file. The target must exist at the specified path.
+
+**CommonMark / GitHub**
+
+### Link to a Section
+
+**Markdown source:**
+
+```markdown
+[Go to Text Formatting](#1-text-formatting)
+```
+
+**Expected result:** On GitHub, clicking the link jumps to the Text Formatting section.
+
+**GitHub**
+
+### Image with Alternative Text
 
 **Markdown source:**
 
@@ -124,7 +214,21 @@ Use `print("Hello")` to display text in Python.
 ![Example image](https://example.com/image.png)
 ```
 
-**Expected result:** An image if the URL points to an accessible image file. This example URL may not display an actual image.
+**Expected result:** An image if the URL points to an accessible image file. Alternative text describes the image if it cannot be displayed.
+
+**CommonMark / GitHub**
+
+### Image That Is a Link
+
+**Markdown source:**
+
+```markdown
+[![Example image](https://example.com/image.png)](https://github.com)
+```
+
+**Expected result:** Clicking the image opens GitHub if the image loads.
+
+**CommonMark / GitHub**
 
 ## 4. Code
 
@@ -140,7 +244,56 @@ print("Hello, world!")
 
 **Expected result:** A separate code block. GitHub may apply Python syntax highlighting.
 
+**CommonMark / GitHub**
+
+### Python Code Block
+
+**Markdown source:**
+
+````markdown
+```python
+print("Hello, world!")
+```
+````
+
+**Expected result:** A code block containing Python code.
+
+**CommonMark / GitHub**
+
+### Bash Code Block
+
+**Markdown source:**
+
+````markdown
+```bash
+echo "Hello, world!"
+```
+````
+
+**Expected result:** A code block containing Bash code.
+
+**CommonMark / GitHub**
+
+### JSON Code Block
+
+**Markdown source:**
+
+````markdown
+```json
+{
+  "course": "Data Integration",
+  "lab": 1
+}
+```
+````
+
+**Expected result:** A code block containing JSON.
+
+**CommonMark / GitHub**
+
 ## 5. Blockquotes
+
+### Blockquote
 
 **Markdown source:**
 
@@ -150,7 +303,38 @@ print("Hello, world!")
 
 **Expected result:** The sentence appears as an indented quotation.
 
+**CommonMark / GitHub**
+
+### Nested Blockquotes and Formatting
+
+**Markdown source:**
+
+```markdown
+> First level
+>
+> > Second level with **bold text**
+```
+
+**Expected result:** A quotation inside another quotation, with bold text.
+
+**CommonMark / GitHub**
+
+### GitHub Alerts
+
+**Markdown source:**
+
+```markdown
+> [!NOTE]
+> This is a note.
+```
+
+**Expected result:** GitHub displays a note-style alert.
+
+**GitHub**
+
 ## 6. Tables
+
+### Basic Table
 
 **Markdown source:**
 
@@ -162,6 +346,37 @@ print("Hello, world!")
 ```
 
 **Expected result:** A table with two columns and two data rows.
+
+**GitHub:** Tables are supported.  
+**CommonMark:** Test in CommonMark Dingus; table syntax is not part of core CommonMark.
+
+### Aligned Table
+
+**Markdown source:**
+
+```markdown
+| Left | Center | Right |
+| :--- | :---: | ---: |
+| A | B | C |
+```
+
+**Expected result:** The first column is left-aligned, the second centered, and the third right-aligned.
+
+**GitHub**
+
+### Table with a Link and an Escaped Pipe
+
+**Markdown source:**
+
+```markdown
+| Tool | Description |
+| --- | --- |
+| [GitHub](https://github.com) | A \| B |
+```
+
+**Expected result:** A table containing a link and a literal pipe character inside a cell.
+
+**GitHub**
 
 ## 7. Horizontal Rules and Other Elements
 
@@ -175,9 +390,42 @@ print("Hello, world!")
 
 **Expected result:** A horizontal line.
 
+**CommonMark / GitHub**
+
+### HTML Comments
+
+**Markdown source:**
+
+```html
+<!-- This comment is not normally visible in the rendered page. -->
+Visible text.
+```
+
+**Expected result:** Only "Visible text." appears in the rendered page.
+
+**GitHub:** Supported.  
+**CommonMark:** Test the HTML comment in CommonMark Dingus.
+
+### Collapsible Section
+
+**Markdown source:**
+
+````html
+<details>
+<summary>Show details</summary>
+
+This content is hidden until expanded.
+
+</details>
+````
+
+**Expected result:** GitHub displays a collapsible section.
+
+**GitHub**
+
 ## 8. GitHub-Specific Features
 
-### Emoji
+### Emoji Shortcodes
 
 **Markdown source:**
 
@@ -185,53 +433,83 @@ print("Hello, world!")
 :smile:
 ```
 
-**Expected result:** GitHub may render the shortcode as a smile emoji.
+**Expected result:** GitHub renders the shortcode as a smile emoji.
 
-### Mention
+**GitHub**
+
+### Mentions and Issue References
 
 **Markdown source:**
 
 ```markdown
 @github
+#1
 ```
 
-**Expected result:** GitHub may turn a valid account mention into a profile link. Use a real account name when testing.
+**Expected result:** GitHub may turn a valid account mention or issue reference into a link. The issue reference works only if the relevant issue exists in the repository.
 
-## GitHub Extras
+**GitHub**
 
-In this section, I demonstrate Markdown features that are
-supported by GitHub.
-
-### Mermaid Diagram
-
-**GitHub:** Mermaid creates diagrams from text.
+### Footnotes
 
 **Markdown source:**
 
+```markdown
+Here is a statement with a footnote.[^1]
+
+[^1]: This is the footnote.
+```
+
+**Expected result:** GitHub renders a footnote reference and its corresponding note.
+
+**GitHub**
+
+### Mermaid Diagram
+
+**Explanation:** Mermaid creates diagrams from text.
+
+**Markdown source:**
+
+````markdown
 ```mermaid
 flowchart TD
     A[Find data] --> B[Clean data]
     B --> C[Analyse data]
 ```
+````
+
 **Expected result:** A flowchart with three steps: Find data, Clean data, and Analyse data.
 
-</box>
+**GitHub**
 
-Achte darauf, dass die drei Backticks allein in einer neuen Zeile stehen. Sie beenden den Mermaid-Codeblock.
+### Mathematical Formula
 
-Danach klickst du auf **Preview**. Wenn du den Text richtig eingefügt hast, solltest du unter „Expected result“ die Beschreibung sehen.
+**Explanation:** GitHub supports mathematical expressions using LaTeX syntax.
 
-**Noch nicht auf Commit changes klicken**, wenn du unsicher bist. Schreib mir erst „hab“, dann machen wir weiter.
+**Markdown source:**
+
+````markdown
+```math
+E = mc^2
+```
+````
+
+**Expected result:** The formula is displayed as a mathematical equation.
+
+**GitHub**
+
 ## 9. Pitfalls
 
 Record at least three things you tested that did not work as expected. Explain what happened and how you fixed it.
 
-1. **Problem:** [Describe your first issue.]
-   **Solution:** [Describe how you solved it.]
-2. **Problem:** [Describe your second issue.]
-   **Solution:** [Describe how you solved it.]
-3. **Problem:** [Describe your third issue.]
-   **Solution:** [Describe how you solved it.]
+1. **Problem:** Strikethrough did not work in CommonMark Dingus.  
+   **Solution:** I labelled strikethrough as GitHub-specific because GitHub supports it.
+
+2. **Problem:** The Mermaid diagram did not appear immediately.  
+   **Solution:** I saved the file and checked the rendered result on GitHub.
+
+3. **Problem:** A placeholder image URL may not display an image.  
+   **Solution:** I explained that the URL must point to an accessible image file.
 
 ### Line Breaks
 
