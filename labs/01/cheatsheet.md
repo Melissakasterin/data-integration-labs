@@ -212,8 +212,9 @@ supported by GitHub.
 flowchart TD
     A[Find data] --> B[Clean data]
     B --> C[Analyse data]
+```
+**Expected result:** A flowchart with three steps: Find data, Clean data, and Analyse data.
 
-<button block onClick={() => GenUI.copy("```\n\n**Expected result:** A flowchart with three steps: Find data, Clean data, and Analyse data.")}><icon name="copy" size="xs" /> Rest kopieren</button>
 </box>
 
 Achte darauf, dass die drei Backticks allein in einer neuen Zeile stehen. Sie beenden den Mermaid-Codeblock.
