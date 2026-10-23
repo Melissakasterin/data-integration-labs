@@ -29,7 +29,7 @@
 
 **Expected result:** Three headings with decreasing sizes.
 
-**CommonMark / GitHub**
+**Classification:** CommonMark
 
 ### Paragraphs and Line Breaks
 
@@ -48,7 +48,7 @@ Second line
 
 **Expected result:** Two paragraphs and a line break between the last two lines.
 
-**CommonMark / GitHub**
+**Classification:** CommonMark
 
 ### Bold, Italic and Strikethrough
 
@@ -65,8 +65,7 @@ Second line
 
 **Expected result:** Bold, italic, bold and italic, and crossed-out text.
 
-**CommonMark:** Bold and italic work.  
-**GitHub:** Strikethrough also works.
+**Classification:** Bold and italic: CommonMark. Strikethrough: GitHub.
 
 ### Escaping Characters
 
@@ -80,7 +79,7 @@ Second line
 
 **Expected result:** The asterisks appear literally.
 
-**CommonMark / GitHub**
+**Classification:** CommonMark
 
 ### Inline Code
 
@@ -94,7 +93,7 @@ Use `print("Hello")` to display text in Python.
 
 **Expected result:** The Python command appears as inline code.
 
-**CommonMark / GitHub**
+**Classification:** CommonMark
 
 ## 2. Lists
 
@@ -110,7 +109,7 @@ Use `print("Hello")` to display text in Python.
 
 **Expected result:** Three bullet points.
 
-**CommonMark / GitHub**
+**Classification:** CommonMark
 
 ### Ordered List
 
@@ -124,7 +123,7 @@ Use `print("Hello")` to display text in Python.
 
 **Expected result:** A numbered list with three items.
 
-**CommonMark / GitHub**
+**Classification:** CommonMark
 
 ### Nested List
 
@@ -139,7 +138,7 @@ Use `print("Hello")` to display text in Python.
 
 **Expected result:** Two main items, with two sub-items under Data.
 
-**CommonMark / GitHub**
+**Classification:** CommonMark
 
 ### Task List
 
@@ -152,7 +151,7 @@ Use `print("Hello")` to display text in Python.
 
 **Expected result:** A checked item and an unchecked item on GitHub.
 
-**GitHub**
+**Classification:** GitHub
 
 ## 3. Links and Images
 
@@ -166,7 +165,7 @@ Use `print("Hello")` to display text in Python.
 
 **Expected result:** A clickable link to GitHub.
 
-**CommonMark / GitHub**
+**Classification:** CommonMark
 
 ### Reference-Style Link
 
@@ -180,19 +179,19 @@ Use `print("Hello")` to display text in Python.
 
 **Expected result:** A clickable link using a reference definition.
 
-**CommonMark / GitHub**
+**Classification:** CommonMark
 
 ### Relative Link to Another File
 
 **Markdown source:**
 
 ```markdown
-[Lab 01](README.md)
+[Repository README](../../README.md)
 ```
 
-**Expected result:** A link to a file relative to the current file. The target must exist at the specified path.
+**Expected result:** A link from this cheatsheet to the repository's README file.
 
-**CommonMark / GitHub**
+**Classification:** CommonMark
 
 ### Link to a Section
 
@@ -204,7 +203,7 @@ Use `print("Hello")` to display text in Python.
 
 **Expected result:** On GitHub, clicking the link jumps to the Text Formatting section.
 
-**GitHub**
+**Classification:** GitHub
 
 ### Image with Alternative Text
 
@@ -214,9 +213,9 @@ Use `print("Hello")` to display text in Python.
 ![Example image](https://example.com/image.png)
 ```
 
-**Expected result:** An image if the URL points to an accessible image file. Alternative text describes the image if it cannot be displayed.
+**Expected result:** An image appears if the URL points to an accessible image file. Alternative text can describe the image to screen-reader users or appear if the image cannot be loaded.
 
-**CommonMark / GitHub**
+**Classification:** CommonMark
 
 ### Image That Is a Link
 
@@ -228,23 +227,25 @@ Use `print("Hello")` to display text in Python.
 
 **Expected result:** Clicking the image opens GitHub if the image loads.
 
-**CommonMark / GitHub**
+**Classification:** CommonMark
 
 ## 4. Code
 
 ### Fenced Code Block
 
+**Explanation:** Triple backticks create a separate code block. A language identifier can enable syntax highlighting in supported renderers.
+
 **Markdown source:**
 
 ````markdown
-```python
-print("Hello, world!")
+```
+This is a code block.
 ```
 ````
 
-**Expected result:** A separate code block. GitHub may apply Python syntax highlighting.
+**Expected result:** A separate block containing the text.
 
-**CommonMark / GitHub**
+**Classification:** CommonMark
 
 ### Python Code Block
 
@@ -256,9 +257,9 @@ print("Hello, world!")
 ```
 ````
 
-**Expected result:** A code block containing Python code.
+**Expected result:** A code block containing Python code. GitHub normally highlights the syntax.
 
-**CommonMark / GitHub**
+**Classification:** CommonMark (code block); GitHub (syntax highlighting)
 
 ### Bash Code Block
 
@@ -270,9 +271,9 @@ echo "Hello, world!"
 ```
 ````
 
-**Expected result:** A code block containing Bash code.
+**Expected result:** A code block containing Bash code. GitHub normally highlights the syntax.
 
-**CommonMark / GitHub**
+**Classification:** CommonMark (code block); GitHub (syntax highlighting)
 
 ### JSON Code Block
 
@@ -287,9 +288,9 @@ echo "Hello, world!"
 ```
 ````
 
-**Expected result:** A code block containing JSON.
+**Expected result:** A code block containing JSON. GitHub normally highlights the syntax.
 
-**CommonMark / GitHub**
+**Classification:** CommonMark (code block); GitHub (syntax highlighting)
 
 ## 5. Blockquotes
 
@@ -303,7 +304,7 @@ echo "Hello, world!"
 
 **Expected result:** The sentence appears as an indented quotation.
 
-**CommonMark / GitHub**
+**Classification:** CommonMark
 
 ### Nested Blockquotes and Formatting
 
@@ -317,7 +318,7 @@ echo "Hello, world!"
 
 **Expected result:** A quotation inside another quotation, with bold text.
 
-**CommonMark / GitHub**
+**Classification:** CommonMark
 
 ### GitHub Alerts
 
@@ -330,7 +331,7 @@ echo "Hello, world!"
 
 **Expected result:** GitHub displays a note-style alert.
 
-**GitHub**
+**Classification:** GitHub
 
 ## 6. Tables
 
@@ -347,8 +348,7 @@ echo "Hello, world!"
 
 **Expected result:** A table with two columns and two data rows.
 
-**GitHub:** Tables are supported.  
-**CommonMark:** Test in CommonMark Dingus; table syntax is not part of core CommonMark.
+**Classification:** GitHub
 
 ### Aligned Table
 
@@ -362,7 +362,7 @@ echo "Hello, world!"
 
 **Expected result:** The first column is left-aligned, the second centered, and the third right-aligned.
 
-**GitHub**
+**Classification:** GitHub
 
 ### Table with a Link and an Escaped Pipe
 
@@ -376,7 +376,7 @@ echo "Hello, world!"
 
 **Expected result:** A table containing a link and a literal pipe character inside a cell.
 
-**GitHub**
+**Classification:** GitHub
 
 ## 7. Horizontal Rules and Other Elements
 
@@ -390,7 +390,7 @@ echo "Hello, world!"
 
 **Expected result:** A horizontal line.
 
-**CommonMark / GitHub**
+**Classification:** CommonMark
 
 ### HTML Comments
 
@@ -403,25 +403,24 @@ Visible text.
 
 **Expected result:** Only "Visible text." appears in the rendered page.
 
-**GitHub:** Supported.  
-**CommonMark:** Test the HTML comment in CommonMark Dingus.
+**Classification:** CommonMark
 
 ### Collapsible Section
 
 **Markdown source:**
 
-````html
+```html
 <details>
 <summary>Show details</summary>
 
 This content is hidden until expanded.
 
 </details>
-````
+```
 
-**Expected result:** GitHub displays a collapsible section.
+**Expected result:** GitHub displays a collapsible section. Click "Show details" to reveal the hidden content.
 
-**GitHub**
+**Classification:** GitHub
 
 ## 8. GitHub-Specific Features
 
@@ -435,7 +434,7 @@ This content is hidden until expanded.
 
 **Expected result:** GitHub renders the shortcode as a smile emoji.
 
-**GitHub**
+**Classification:** GitHub
 
 ### Mentions and Issue References
 
@@ -448,7 +447,7 @@ This content is hidden until expanded.
 
 **Expected result:** GitHub may turn a valid account mention or issue reference into a link. The issue reference works only if the relevant issue exists in the repository.
 
-**GitHub**
+**Classification:** GitHub
 
 ### Footnotes
 
@@ -457,12 +456,12 @@ This content is hidden until expanded.
 ```markdown
 Here is a statement with a footnote.[^1]
 
-[^1]: This is the footnote.
+[^1]: This is the footnote text.
 ```
 
 **Expected result:** GitHub renders a footnote reference and its corresponding note.
 
-**GitHub**
+**Classification:** GitHub
 
 ### Mermaid Diagram
 
@@ -480,7 +479,7 @@ flowchart TD
 
 **Expected result:** A flowchart with three steps: Find data, Clean data, and Analyse data.
 
-**GitHub**
+**Classification:** GitHub
 
 ### Mathematical Formula
 
@@ -496,11 +495,11 @@ E = mc^2
 
 **Expected result:** The formula is displayed as a mathematical equation.
 
-**GitHub**
+**Classification:** GitHub
 
 ## 9. Pitfalls
 
-Record at least three things you tested that did not work as expected. Explain what happened and how you fixed it.
+Record at least three things you tested that did not work as expected. Explain what happened and how you fixed it. The examples below are suggestions; keep them only if they match what you actually observed.
 
 1. **Problem:** Strikethrough did not work in CommonMark Dingus.  
    **Solution:** I labelled strikethrough as GitHub-specific because GitHub supports it.
@@ -508,143 +507,5 @@ Record at least three things you tested that did not work as expected. Explain w
 2. **Problem:** The Mermaid diagram did not appear immediately.  
    **Solution:** I saved the file and checked the rendered result on GitHub.
 
-3. **Problem:** A placeholder image URL may not display an image.  
+3. **Problem:** A placeholder image URL did not display an image.  
    **Solution:** I explained that the URL must point to an accessible image file.
-
-### Line Breaks
-
-**Markdown source:**
-
-```markdown
-First line  
-Second line
-```
-
-**Expected result:** The text appears on two separate lines. Two spaces at the end of the first line create a line break in CommonMark.
-
-### Links to Sections
-
-**Markdown source:**
-
-```markdown
-[Go to Text Formatting](#1-text-formatting)
-```
-
-**Expected result:** Clicking the link jumps to the Text Formatting section on GitHub.
-
-### Images with Alternative Text
-
-**Markdown source:**
-
-```markdown
-![A description of the image](https://example.com/image.png)
-```
-
-**Expected result:** The alternative text describes the image if it cannot be displayed.
-
-### Nested Blockquotes
-
-**Markdown source:**
-
-```markdown
-> First level
->
-> > Second level
-```
-
-**Expected result:** A quotation inside another quotation.
-
-### Aligned Tables
-
-**Markdown source:**
-
-```markdown
-| Left | Center | Right |
-| :--- | :---: | ---: |
-| A | B | C |
-```
-
-**Expected result:** The first column is left-aligned, the second centered, and the third right-aligned.
-
-### HTML Comments
-
-**Markdown source:**
-
-```markdown
-<!-- This comment is not normally visible in the rendered page. -->
-Visible text.
-```
-
-**Expected result:** Only "Visible text." appears in the rendered page.
-
-### Footnotes (GitHub)
-
-**Markdown source:**
-
-```markdown
-Here is a statement with a footnote.[^1]
-
-[^1]: This is the footnote.
-```
-
-**Expected result:** GitHub renders a footnote reference and its corresponding note. Test whether the same syntax works in CommonMark Dingus.
-
-### Collapsible Section (GitHub)
-
-**Markdown source:**
-
-```html
-<details>
-<summary>Show details</summary>
-
-This content is hidden until expanded.
-
-</details>
-```
-
-**Expected result:** GitHub displays a collapsible section. This is GitHub-specific HTML, so test it separately from standard CommonMark.
-
-### Python Code Block
-
-**CommonMark / GitHub:** A fenced code block can specify a language. Syntax highlighting depends on the renderer.
-
-**Markdown source:**
-
-````markdown
-```python
-print("Hello, world!")
-```
-````
-
-**Expected result:** A code block containing Python code. GitHub normally highlights the Python syntax.
-
-### Bash Code Block
-
-**CommonMark / GitHub:** The language identifier is `bash`.
-
-**Markdown source:**
-
-````markdown
-```bash
-echo "Hello, world!"
-```
-````
-
-**Expected result:** A code block containing Bash code. GitHub normally highlights the syntax.
-
-### JSON Code Block
-
-**CommonMark / GitHub:** The language identifier is `json`.
-
-**Markdown source:**
-
-````markdown
-```json
-{
-  "course": "Data Integration",
-  "lab": 1
-}
-```
-````
-
-**Expected result:** A code block containing JSON. GitHub normally highlights the syntax.
