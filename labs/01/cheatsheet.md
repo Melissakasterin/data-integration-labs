@@ -197,6 +197,22 @@ print("Hello, world!")
 
 **Expected result:** GitHub may turn a valid account mention into a profile link. Use a real account name when testing.
 
+## GitHub Extras
+
+In this section, I demonstrate Markdown features that are
+supported by GitHub.
+
+### Mermaid Diagram
+
+**GitHub:** Mermaid creates diagrams from text.
+
+**Markdown source:**
+
+```mermaid
+flowchart TD
+    A[Find data] --> B[Clean data]
+    B --> C[Analyse data]
+
 ## 9. Pitfalls
 
 Record at least three things you tested that did not work as expected. Explain what happened and how you fixed it.
