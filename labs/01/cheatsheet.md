@@ -213,6 +213,14 @@ flowchart TD
     A[Find data] --> B[Clean data]
     B --> C[Analyse data]
 
+<button block onClick={() => GenUI.copy("```\n\n**Expected result:** A flowchart with three steps: Find data, Clean data, and Analyse data.")}><icon name="copy" size="xs" /> Rest kopieren</button>
+</box>
+
+Achte darauf, dass die drei Backticks allein in einer neuen Zeile stehen. Sie beenden den Mermaid-Codeblock.
+
+Danach klickst du auf **Preview**. Wenn du den Text richtig eingefügt hast, solltest du unter „Expected result“ die Beschreibung sehen.
+
+**Noch nicht auf Commit changes klicken**, wenn du unsicher bist. Schreib mir erst „hab“, dann machen wir weiter.
 ## 9. Pitfalls
 
 Record at least three things you tested that did not work as expected. Explain what happened and how you fixed it.
