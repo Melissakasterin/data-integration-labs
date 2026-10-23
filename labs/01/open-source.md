@@ -32,7 +32,11 @@ These files help contributors understand the project's rules and how to particip
 
 ## 5. Funding
 
-To be completed after inspecting the repository.
+- **Fiscal sponsor:** NumFOCUS, a nonprofit organization that provides financial and administrative support.
+- **Funding sources:** Donations, corporate sponsorships and institutional support.
+- **Current sponsors:** Tidelift and Bodo.
+- **Purpose:** Funding helps support pandas development and project infrastructure.
+- **Source:** [Official pandas Sponsors page](https://pandas.pydata.org/about/sponsors.html)
 
 ## 6. Releases, Issues and Pull Requests
 
