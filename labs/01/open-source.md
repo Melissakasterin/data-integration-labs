@@ -15,10 +15,7 @@
 
 ## 3. Community Files
 
-- **Contributors:** The pandas repository has many contributors who submit code, bug fixes, tests and documentation improvements.
-- **Maintainers:** The project has triage members and core team members with different permissions.
-- **Who can merge pull requests?** Only core team members can merge pull requests.
-- **Source:** [pandas Maintenance Guide](https://pandas.pydata.org/docs/dev/development/maintaining.html)
+The pandas project provides several community files:
 
 - **Code of Conduct:** Defines expectations for respectful and inclusive behavior.
 - **Contributing Guide:** Explains how to report bugs and submit contributions.
@@ -28,7 +25,10 @@ These files help contributors understand the project's rules and how to particip
 
 ## 4. Contributors and Maintainers
 
-To be completed after inspecting the repository.
+- **Contributors:** The pandas repository has many contributors who submit code, bug fixes, tests and documentation improvements.
+- **Maintainers:** The project has triage members and core team members with different permissions.
+- **Who can merge pull requests?** Only core team members can merge pull requests.
+- **Source:** [pandas Maintenance Guide](https://pandas.pydata.org/docs/dev/development/maintaining.html)
 
 ## 5. Funding
 
