@@ -40,8 +40,18 @@ These files help contributors understand the project's rules and how to particip
 
 ## 6. Releases, Issues and Pull Requests
 
-To be completed after inspecting the repository.
+- **Releases:** pandas publishes versioned releases to distribute updates and improvements.
+- **Issues:** The repository uses issues to track bugs and enhancement requests. Many issues are open for discussion or investigation.
+- **Pull Requests:** Contributors propose code changes through pull requests, which are reviewed before being merged.
+- **Activity:** The repository shows ongoing development, with recent issues and pull requests.
+- **Sources:** [Releases](https://github.com/pandas-dev/pandas/releases), [Issues](https://github.com/pandas-dev/pandas/issues), [Pull Requests](https://github.com/pandas-dev/pandas/pulls)
 
 ## 7. Contribution Guide
 
-To be completed after inspecting the repository.
+The pandas project welcomes contributions from developers of all experience levels.
+
+- **Finding tasks:** Beginners can look for suitable issues, including issues labeled `good first issue` and `Docs`.
+- **Reporting bugs:** Bug reports and enhancement requests should be submitted through GitHub Issues.
+- **Submitting changes:** Contributors use Git and GitHub, create a fork, make changes and submit a Pull Request for review.
+- **Review process:** Maintainers review proposed changes before they are merged.
+- **Source:** [Official pandas Contributing Guide](https://pandas.pydata.org/docs/development/contributing.html)
