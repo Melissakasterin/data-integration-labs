@@ -8,8 +8,10 @@
 - **Purpose:** pandas is a Python library for data manipulation and analysis.
 
 ## 2. License
-
-To be completed after checking the repository's license and the GitHub API.
+- **License:** BSD 3-Clause License
+- **SPDX identifier:** BSD-3-Clause
+- **License file:** [LICENSE](https://github.com/pandas-dev/pandas/blob/main/LICENSE)
+- **Permissions and conditions:** The license allows use, modification and redistribution, provided that the license and copyright notice are retained. It also restricts using the names of copyright holders or contributors to endorse derived products without permission.
 
 ## 3. Community Files
 
