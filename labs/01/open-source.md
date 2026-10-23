@@ -8,6 +8,14 @@
 - **Purpose:** pandas is a Python library for data manipulation and analysis.
 
 ## 2. License
+### GitHub API comparison
+
+- **pandas-dev/pandas:** The GitHub API reports the SPDX identifier `BSD-3-Clause`.
+- **Melissakasterin/data-integration-labs:** The repository's license information was checked through the GitHub API.
+- **owid/co2-data:** The API returns `"license": null`, meaning that no recognized license is returned in this field. This does not by itself prove that no license information exists elsewhere.
+
+**API sources:** [pandas](https://api.github.com/repos/pandas-dev/pandas), [my repository](https://api.github.com/repos/Melissakasterin/data-integration-labs), [OWID CO₂ data](https://api.github.com/repos/owid/co2-data)
+
 - **License:** BSD 3-Clause License
 - **SPDX identifier:** BSD-3-Clause
 - **License file:** [LICENSE](https://github.com/pandas-dev/pandas/blob/main/LICENSE)
