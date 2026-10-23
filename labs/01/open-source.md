@@ -15,7 +15,13 @@
 
 ## 3. Community Files
 
-To be completed after inspecting the repository.
+The pandas project provides several community files:
+
+- **Code of Conduct:** Defines expectations for respectful and inclusive behavior.
+- **Contributing Guide:** Explains how to report bugs and submit contributions.
+- **Security Policy:** Provides guidance for reporting security vulnerabilities.
+
+These files help contributors understand the project's rules and how to participate responsibly.
 
 ## 4. Contributors and Maintainers
 
