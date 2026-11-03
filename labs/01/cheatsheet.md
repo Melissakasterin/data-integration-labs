@@ -604,7 +604,7 @@ This content is hidden until expanded.
 
 **Classification:** GitHub
 
-**Test result:** OFFEN
+**Test result:** In a comment on [issue #1](https://github.com/Melissakasterin/data-integration-labs/issues/1), `@Melissakasterin` and `#1` became links. In this file, `@github` and `#1` stayed plain text.
 
 ### Footnotes
 
@@ -682,5 +682,3 @@ E = mc^2
    **Solution:** I changed the label to CommonMark.
 
 ### Mentions – Test result
-
-In a comment on [issue #1](https://github.com/Melissakasterin/data-integration-labs/issues/1), `@Melissakasterin` and `#1` became links. In this file, `@github` and `#1` stayed plain text.
