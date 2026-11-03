@@ -1,6 +1,6 @@
 # KI-Nutzung
 
-Für Lab 1 habe ich ChatGPT und Claude verwendet. Die KI-Tools haben mich vor allem durch Erklärungen, Schritt-für-Schritt-Anleitungen, Recherche und Gegenprüfungen unterstützt. Die Aufgaben habe ich mit Unterstützung der Tools selbst bearbeitet. Hier dokumentiere ich, wofür ich die Tools genutzt habe und welche Arbeitsschritte ich selbst nachvollzogen habe. Angaben, die ich nicht mehr genau rekonstruieren kann, sind als solche gekennzeichnet.
+Für Lab 1 habe ich ChatGPT und Claude verwendet. Die KI-Tools haben mich vor allem durch Erklärungen, Schritt-für-Schritt-Anleitungen, Recherche und Gegenprüfungen unterstützt.Einen Teil der Aufgaben habe ich mit Unterstützung der Tools selbst bearbeitet. Große Teile von `dataset.md` und die Überarbeitung des Cheat Sheets hat Claude entworfen. Hier dokumentiere ich, wofür ich die Tools genutzt habe und welche Arbeitsschritte ich selbst nachvollzogen habe. Angaben, die ich nicht mehr genau rekonstruieren kann, sind als solche gekennzeichnet.
 
 ## Verwendete Tools
 
@@ -42,7 +42,7 @@ Für Lab 1 habe ich ChatGPT und Claude verwendet. Die KI-Tools haben mich vor al
 - **Prompt:** „Das Cheat Sheet ist der größte offene Punkt. Bitte übernimm hier möglichst die gesamte Arbeit.“ und „Prüfe die fehlenden GitHub-Werte.“
 - **Was die KI gemacht hat:** Claude hat Profil und README mit dem Aufgabenblatt verglichen und Ergänzungen vorbereitet. Im Cheat Sheet hat Claude 25 Erklärungen ergänzt, die gerenderten Ergebnisse eingefügt, die Bild-URL und ein Label korrigiert und drei Pitfalls aus unserem Arbeitsverlauf formuliert. Für `open-source.md` hat Claude Zahlen, Lizenzen, Community-Dateien und Sponsoren nach meiner Freigabe in meinem Browser abgerufen und die Datei ergänzt.
 - **Übernommen, geändert, verworfen:** Die vorbereiteten Inhalte habe ich selbst auf GitHub eingefügt. Die Zeile zu meinen Dateninteressen habe ich vorgegeben.
-- **Wie geprüft:** Claude hat die Einträge mit commonmark.js getestet und die gespeicherten Seiten auf GitHub geprüft. Ein Test aller Einträge im CommonMark Dingus selbst ist nicht dokumentiert. Ich habe das Bild im Cheat Sheet geprüft und für den Mentions-Test Issue #1 angelegt. Meine erste Einschätzung, dass Mentions auch in der Datei Links sind, wurde durch Claudes Prüfung korrigiert.
+- **Wie geprüft:** Claude hat die Einträge mit commonmark.js getestet und die gespeicherten Seiten auf GitHub geprüft. Claude hat zusätzlich alle 33 Einträge auf der Seite des CommonMark Dingus mit dessen Bibliothek ausgewertet. Ich habe das Bild im Cheat Sheet geprüft und für den Mentions-Test Issue #1 angelegt. Meine erste Einschätzung, dass Mentions auch in der Datei Links sind, wurde durch Claudes Prüfung korrigiert.
 
   
 ## 03.11.2026 · Lab 1, Task 5
