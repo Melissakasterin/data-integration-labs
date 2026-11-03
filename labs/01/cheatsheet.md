@@ -680,3 +680,7 @@ E = mc^2
 
 3. **Problem:** I had labelled collapsible sections as GitHub only, but `<details>` also rendered in a CommonMark test with commonmark.js, the library behind the dingus.  
    **Solution:** I changed the label to CommonMark.
+
+### Mentions – Test result
+
+In a comment on [issue #1](https://github.com/Melissakasterin/data-integration-labs/issues/1), `@Melissakasterin` and `#1` became links. In this file, `@github` and `#1` stayed plain text.
