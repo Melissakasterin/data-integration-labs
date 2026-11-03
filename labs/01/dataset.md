@@ -24,11 +24,11 @@ Alle Suchen fanden am 03.11.2026 statt. Die erste Idee für GDELT kam aus einer 
 
 | Quelle | Art | Suchbegriff | Ergebnis |
 | --- | --- | --- | --- |
-| [Open.NRW](https://open.nrw/api/3/action/package_search?q=konzert&rows=1) | Landesportal | `konzert` | 8 Treffer, Kulturstatistik zu Konzertorchestern, nichts zu Ticketpreisen oder Medien |
-| [GovData](https://www.govdata.de/ckan/api/3/action/package_search?q=konzert&rows=1) | Nationales Portal | `konzert` | 24 Treffer, erster Treffer wie bei Open.NRW, denn GovData übernimmt ihn von dort |
-| [Google Dataset Search](https://datasetsearch.research.google.com/search?query=GDELT%20Global%20Knowledge%20Graph) | Datensatz-Suchmaschine | `GDELT Global Knowledge Graph` | 12 Treffer, darunter eine Kopie von GDELT auf Kaggle und Auszüge auf Hugging Face |
+| [Open.NRW](https://open.nrw/api/3/action/package_search?q=konzert&rows=8) | Landesportal | `konzert` | 8 Treffer, u. a. zu Konzertorchestern, Veranstaltungen, Kulturorten und Clubs. Kein Titel nennt Ticketpreise |
+| [GovData](https://www.govdata.de/ckan/api/3/action/package_search?q=konzert&rows=24) | Nationales Portal | `konzert` | 24 Treffer, erster Treffer wie bei Open.NRW, denn GovData übernimmt ihn von dort |
+| [Google Dataset Search](https://datasetsearch.research.google.com/search?query=GDELT%20Global%20Knowledge%20Graph) | Datensatz-Suchmaschine | `GDELT Global Knowledge Graph` | 12 Treffer, darunter der Eintrag „The GDELT Project“ auf Kaggle und Datensätze mit GDELT im Namen auf Hugging Face |
 
-Die Treffer auf Kaggle und Hugging Face sind Kopien. Deshalb arbeite ich mit der [Originalquelle](https://www.gdeltproject.org/data.html).
+Ob die Einträge auf Kaggle und Hugging Face vollständige Kopien oder abgeleitete Daten sind, ist nicht einzeln geprüft. Deshalb arbeite ich mit der [Originalquelle](https://www.gdeltproject.org/data.html).
 
 ### Suche per API
 
@@ -73,7 +73,7 @@ Ich nutze den **GDELT 2.0 Global Knowledge Graph (GKG)**. GDELT ist kein einzeln
 
 ### Daten ansehen
 
-Datei: `20261102181500.gkg.csv`. Werkzeug: LibreOffice Calc auf meinem MacBook, Import mit UTF-8 und Tabulator, Unterstützung durch ChatGPT. Tone und Word Count habe ich in Hilfsspalten aus Spalte P geholt. Claude hat die Werte mit Python und `awk` gegengerechnet, die Ergebnisse stimmen überein (siehe `AI_USAGE.md`).
+Datei: `20261102181500.gkg.csv`. Werkzeug: LibreOffice Calc auf meinem MacBook, Import mit UTF-8 und Tabulator, Unterstützung durch ChatGPT. Tone und Word Count habe ich in Hilfsspalten aus Spalte P geholt. Claude hat die Werte mit LibreOffice, Python und `awk` gegengerechnet, die Ergebnisse stimmen überein (siehe `AI_USAGE.md`).
 
 Beide Zahlen stecken in Spalte 16 (`V1.5TONE`), die sieben kommagetrennte Werte enthält. Diese Spalte muss man zuerst aufteilen.
 
@@ -113,7 +113,7 @@ Der Publisher dokumentiert die Spalten im [GKG Codebook V2.1](https://data.gdelt
 
 ### Lizenz
 
-**Ist der Datensatz offen?** Inhaltlich ja: Die [Terms of Use](https://www.gdeltproject.org/about.html#termsofuse) erlauben jede Nutzung ohne Gebühr, auch das Weitergeben. Verlangt wird nur die Namensnennung, das ist mit der Open Definition vereinbar. Einschränkung: GDELT nutzt eigene Bedingungen statt einer Lizenz von der Liste der Open Definition. Das ist meine Einschätzung, keine bestätigte Einstufung. Die Kopie auf Kaggle nennt CC0, zählt hier aber nicht, denn maßgeblich sind die Bedingungen des Originals. **OFFEN:** Gruppe fragt Prof. Breuer, ob das reicht, falls eine anerkannte Lizenz Pflicht ist.
+**Ist der Datensatz offen?** Inhaltlich ja: Die [Terms of Use](https://www.gdeltproject.org/about.html#termsofuse) erlauben jede Nutzung ohne Gebühr, auch das Weitergeben. Verlangt wird nur die Namensnennung, das ist mit der Open Definition vereinbar. Einschränkung: GDELT nutzt eigene Bedingungen statt einer Lizenz von der Liste der Open Definition. Das ist meine Einschätzung, keine bestätigte Einstufung. Der Eintrag auf Kaggle nennt CC0, zählt hier aber nicht, denn maßgeblich sind die Bedingungen des Originals. **OFFEN:** Gruppe fragt Prof. Breuer, ob das reicht, falls eine anerkannte Lizenz Pflicht ist.
 
 Die verlinkten Artikel selbst können urheberrechtlich geschützt sein. Wir nutzen deshalb nur daraus abgeleitete Zählwerte.
 
@@ -199,7 +199,7 @@ Das sind Zusammenhänge, keine Belege für Ursachen. Die Tourtabellen der Gruppe
 
 ### Lizenzen
 
-Ja, die Kombination ist erlaubt. Pageviews steht unter CC0, GDELT erlaubt Weitergabe mit Zitat und Link. Für die Veröffentlichung passt CC BY 4.0, weil es die Pflicht zur Namensnennung fortführt. Nennen müssen wir das GDELT Project mit Link. Wikimedia nennen wir freiwillig als Quelle. Die Lizenzen der anderen Datensätze der Gruppe müssen wir für das Endergebnis noch mitprüfen.
+**OFFEN:** Pageviews steht unter CC0. GDELT erlaubt die Nutzung und Weitergabe mit Namensnennung und Link, verwendet aber eigene Terms of Use statt einer Standardlizenz. Wir fragen Prof. Breuer, ob die Kombination für unser Projekt zulässig ist und welche Lizenz wir für das gemeinsame Ergebnis verwenden dürfen. Die Lizenzen der übrigen Gruppendatensätze müssen wir ebenfalls noch prüfen.
 
 ### Nächste Schritte
 
