@@ -1,4 +1,3 @@
-
 # Markdown Cheat Sheet
 
 ## Table of Contents
@@ -27,7 +26,11 @@
 ### Heading 3
 ```
 
-**Expected result:** Three headings with decreasing sizes.
+**Rendered result:**
+
+> # Heading 1
+> ## Heading 2
+> ### Heading 3
 
 **Classification:** CommonMark
 
@@ -46,7 +49,14 @@ First line
 Second line
 ```
 
-**Expected result:** Two paragraphs and a line break between the last two lines.
+**Rendered result:**
+
+First paragraph.
+
+Second paragraph.
+
+First line  
+Second line
 
 **Classification:** CommonMark
 
@@ -63,7 +73,12 @@ Second line
 ~~Strikethrough text~~
 ```
 
-**Expected result:** Bold, italic, bold and italic, and crossed-out text.
+**Rendered result:**
+
+**Bold text**
+*Italic text*
+***Bold and italic text***
+~~Strikethrough text~~
 
 **Classification:** Bold and italic: CommonMark. Strikethrough: GitHub.
 
@@ -77,7 +92,9 @@ Second line
 \*This text is not italic\*
 ```
 
-**Expected result:** The asterisks appear literally.
+**Rendered result:**
+
+\*This text is not italic\*
 
 **Classification:** CommonMark
 
@@ -91,13 +108,17 @@ Second line
 Use `print("Hello")` to display text in Python.
 ```
 
-**Expected result:** The Python command appears as inline code.
+**Rendered result:**
+
+Use `print("Hello")` to display text in Python.
 
 **Classification:** CommonMark
 
 ## 2. Lists
 
 ### Unordered List
+
+**Explanation:** A hyphen at the start of a line creates a bullet point.
 
 **Markdown source:**
 
@@ -107,11 +128,17 @@ Use `print("Hello")` to display text in Python.
 - Orange
 ```
 
-**Expected result:** Three bullet points.
+**Rendered result:**
+
+- Apple
+- Banana
+- Orange
 
 **Classification:** CommonMark
 
 ### Ordered List
+
+**Explanation:** A number and a dot create a numbered list.
 
 **Markdown source:**
 
@@ -121,11 +148,17 @@ Use `print("Hello")` to display text in Python.
 3. Third
 ```
 
-**Expected result:** A numbered list with three items.
+**Rendered result:**
+
+1. First
+2. Second
+3. Third
 
 **Classification:** CommonMark
 
 ### Nested List
+
+**Explanation:** Indented items create a list inside a list.
 
 **Markdown source:**
 
@@ -136,11 +169,18 @@ Use `print("Hello")` to display text in Python.
 - Software
 ```
 
-**Expected result:** Two main items, with two sub-items under Data.
+**Rendered result:**
+
+- Data
+  - Open Data
+  - Private Data
+- Software
 
 **Classification:** CommonMark
 
 ### Task List
+
+**Explanation:** Square brackets after a hyphen create a checkbox.
 
 **Markdown source:**
 
@@ -149,7 +189,10 @@ Use `print("Hello")` to display text in Python.
 - [ ] Complete the cheat sheet
 ```
 
-**Expected result:** A checked item and an unchecked item on GitHub.
+**Rendered result:**
+
+- [x] Create a GitHub repository
+- [ ] Complete the cheat sheet
 
 **Classification:** GitHub
 
@@ -157,17 +200,23 @@ Use `print("Hello")` to display text in Python.
 
 ### Inline Link
 
+**Explanation:** Text in square brackets followed by a URL in round brackets creates a link.
+
 **Markdown source:**
 
 ```markdown
 [GitHub](https://github.com)
 ```
 
-**Expected result:** A clickable link to GitHub.
+**Rendered result:**
+
+[GitHub](https://github.com)
 
 **Classification:** CommonMark
 
 ### Reference-Style Link
+
+**Explanation:** A link can take its URL from a definition elsewhere in the file.
 
 **Markdown source:**
 
@@ -177,11 +226,17 @@ Use `print("Hello")` to display text in Python.
 [website]: https://github.com
 ```
 
-**Expected result:** A clickable link using a reference definition.
+**Rendered result:**
+
+[GitHub][website]
+
+[website]: https://github.com
 
 **Classification:** CommonMark
 
 ### Relative Link to Another File
+
+**Explanation:** A path relative to the current file links to another file in the repository.
 
 **Markdown source:**
 
@@ -189,11 +244,15 @@ Use `print("Hello")` to display text in Python.
 [Repository README](../../README.md)
 ```
 
-**Expected result:** A link from this cheatsheet to the repository's README file.
+**Rendered result:**
+
+[Repository README](../../README.md)
 
 **Classification:** CommonMark
 
 ### Link to a Section
+
+**Explanation:** A hash and the heading in lower case link to a section of the same page.
 
 **Markdown source:**
 
@@ -201,31 +260,41 @@ Use `print("Hello")` to display text in Python.
 [Go to Text Formatting](#1-text-formatting)
 ```
 
-**Expected result:** On GitHub, clicking the link jumps to the Text Formatting section.
+**Rendered result:**
+
+[Go to Text Formatting](#1-text-formatting)
 
 **Classification:** GitHub
 
 ### Image with Alternative Text
 
+**Explanation:** An exclamation mark before a link shows an image, and the text in square brackets describes it.
+
 **Markdown source:**
 
 ```markdown
-![Example image](https://example.com/image.png)
+![Example image](https://github.com/github.png?size=80)
 ```
 
-**Expected result:** An image appears if the URL points to an accessible image file. Alternative text can describe the image to screen-reader users or appear if the image cannot be loaded.
+**Rendered result:**
+
+![Example image](https://github.com/github.png?size=80)
 
 **Classification:** CommonMark
 
 ### Image That Is a Link
 
+**Explanation:** An image inside a link makes the image clickable.
+
 **Markdown source:**
 
 ```markdown
-[![Example image](https://example.com/image.png)](https://github.com)
+[![Example image](https://github.com/github.png?size=80)](https://github.com)
 ```
 
-**Expected result:** Clicking the image opens GitHub if the image loads.
+**Rendered result:**
+
+[![Example image](https://github.com/github.png?size=80)](https://github.com)
 
 **Classification:** CommonMark
 
@@ -243,11 +312,17 @@ This is a code block.
 ```
 ````
 
-**Expected result:** A separate block containing the text.
+**Rendered result:**
+
+```
+This is a code block.
+```
 
 **Classification:** CommonMark
 
 ### Python Code Block
+
+**Explanation:** A fenced code block with the language name `python` highlights Python code.
 
 **Markdown source:**
 
@@ -257,11 +332,17 @@ print("Hello, world!")
 ```
 ````
 
-**Expected result:** A code block containing Python code. GitHub normally highlights the syntax.
+**Rendered result:**
+
+```python
+print("Hello, world!")
+```
 
 **Classification:** CommonMark (code block); GitHub (syntax highlighting)
 
 ### Bash Code Block
+
+**Explanation:** A fenced code block with the language name `bash` highlights shell commands.
 
 **Markdown source:**
 
@@ -271,11 +352,17 @@ echo "Hello, world!"
 ```
 ````
 
-**Expected result:** A code block containing Bash code. GitHub normally highlights the syntax.
+**Rendered result:**
+
+```bash
+echo "Hello, world!"
+```
 
 **Classification:** CommonMark (code block); GitHub (syntax highlighting)
 
 ### JSON Code Block
+
+**Explanation:** A fenced code block with the language name `json` highlights JSON data.
 
 **Markdown source:**
 
@@ -288,7 +375,14 @@ echo "Hello, world!"
 ```
 ````
 
-**Expected result:** A code block containing JSON. GitHub normally highlights the syntax.
+**Rendered result:**
+
+```json
+{
+  "course": "Data Integration",
+  "lab": 1
+}
+```
 
 **Classification:** CommonMark (code block); GitHub (syntax highlighting)
 
@@ -296,17 +390,23 @@ echo "Hello, world!"
 
 ### Blockquote
 
+**Explanation:** A greater-than sign at the start of a line creates a quotation.
+
 **Markdown source:**
 
 ```markdown
 > This is a blockquote.
 ```
 
-**Expected result:** The sentence appears as an indented quotation.
+**Rendered result:**
+
+> This is a blockquote.
 
 **Classification:** CommonMark
 
 ### Nested Blockquotes and Formatting
+
+**Explanation:** Two greater-than signs create a quotation inside a quotation, and text formatting still works there.
 
 **Markdown source:**
 
@@ -316,11 +416,17 @@ echo "Hello, world!"
 > > Second level with **bold text**
 ```
 
-**Expected result:** A quotation inside another quotation, with bold text.
+**Rendered result:**
+
+> First level
+>
+> > Second level with **bold text**
 
 **Classification:** CommonMark
 
 ### GitHub Alerts
+
+**Explanation:** A blockquote that starts with a marker such as `[!NOTE]` becomes a highlighted box.
 
 **Markdown source:**
 
@@ -329,13 +435,18 @@ echo "Hello, world!"
 > This is a note.
 ```
 
-**Expected result:** GitHub displays a note-style alert.
+**Rendered result:**
+
+> [!NOTE]
+> This is a note.
 
 **Classification:** GitHub
 
 ## 6. Tables
 
 ### Basic Table
+
+**Explanation:** Pipes separate the columns, and a row of hyphens separates the header.
 
 **Markdown source:**
 
@@ -346,11 +457,18 @@ echo "Hello, world!"
 | GitHub | Version control hosting |
 ```
 
-**Expected result:** A table with two columns and two data rows.
+**Rendered result:**
+
+| Tool | Purpose |
+| --- | --- |
+| Python | Programming |
+| GitHub | Version control hosting |
 
 **Classification:** GitHub
 
 ### Aligned Table
+
+**Explanation:** Colons in the separator row set the alignment of a column.
 
 **Markdown source:**
 
@@ -360,11 +478,17 @@ echo "Hello, world!"
 | A | B | C |
 ```
 
-**Expected result:** The first column is left-aligned, the second centered, and the third right-aligned.
+**Rendered result:**
+
+| Left | Center | Right |
+| :--- | :---: | ---: |
+| A | B | C |
 
 **Classification:** GitHub
 
 ### Table with a Link and an Escaped Pipe
+
+**Explanation:** A table cell can hold a link, and a backslash shows a literal pipe.
 
 **Markdown source:**
 
@@ -374,7 +498,11 @@ echo "Hello, world!"
 | [GitHub](https://github.com) | A \| B |
 ```
 
-**Expected result:** A table containing a link and a literal pipe character inside a cell.
+**Rendered result:**
+
+| Tool | Description |
+| --- | --- |
+| [GitHub](https://github.com) | A \| B |
 
 **Classification:** GitHub
 
@@ -382,17 +510,23 @@ echo "Hello, world!"
 
 ### Horizontal Rule
 
+**Explanation:** Three hyphens on their own line create a dividing line.
+
 **Markdown source:**
 
 ```markdown
 ---
 ```
 
-**Expected result:** A horizontal line.
+**Rendered result:**
+
+---
 
 **Classification:** CommonMark
 
 ### HTML Comments
+
+**Explanation:** Text between comment markers stays in the file but does not appear on the page.
 
 **Markdown source:**
 
@@ -401,11 +535,16 @@ echo "Hello, world!"
 Visible text.
 ```
 
-**Expected result:** Only "Visible text." appears in the rendered page.
+**Rendered result:**
+
+<!-- This comment is not normally visible in the rendered page. -->
+Visible text.
 
 **Classification:** CommonMark
 
 ### Collapsible Section
+
+**Explanation:** The HTML tags `details` and `summary` create a section that opens with a click.
 
 **Markdown source:**
 
@@ -418,13 +557,22 @@ This content is hidden until expanded.
 </details>
 ```
 
-**Expected result:** GitHub displays a collapsible section. Click "Show details" to reveal the hidden content.
+**Rendered result:**
 
-**Classification:** GitHub
+<details>
+<summary>Show details</summary>
+
+This content is hidden until expanded.
+
+</details>
+
+**Classification:** CommonMark
 
 ## 8. GitHub-Specific Features
 
 ### Emoji Shortcodes
+
+**Explanation:** A name between two colons shows an emoji.
 
 **Markdown source:**
 
@@ -432,11 +580,15 @@ This content is hidden until expanded.
 :smile:
 ```
 
-**Expected result:** GitHub renders the shortcode as a smile emoji.
+**Rendered result:**
+
+:smile:
 
 **Classification:** GitHub
 
 ### Mentions and Issue References
+
+**Explanation:** An at sign refers to a user, and a hash with a number refers to an issue.
 
 **Markdown source:**
 
@@ -445,11 +597,18 @@ This content is hidden until expanded.
 #1
 ```
 
-**Expected result:** GitHub may turn a valid account mention or issue reference into a link. The issue reference works only if the relevant issue exists in the repository.
+**Rendered result:**
+
+@github
+#1
 
 **Classification:** GitHub
 
+**Test result:** OFFEN
+
 ### Footnotes
+
+**Explanation:** A marker in the text points to a note that appears at the end of the page.
 
 **Markdown source:**
 
@@ -459,7 +618,11 @@ Here is a statement with a footnote.[^1]
 [^1]: This is the footnote text.
 ```
 
-**Expected result:** GitHub renders a footnote reference and its corresponding note.
+**Rendered result:**
+
+Here is a statement with a footnote.[^1]
+
+[^1]: This is the footnote text.
 
 **Classification:** GitHub
 
@@ -477,7 +640,13 @@ flowchart TD
 ```
 ````
 
-**Expected result:** A flowchart with three steps: Find data, Clean data, and Analyse data.
+**Rendered result:**
+
+```mermaid
+flowchart TD
+    A[Find data] --> B[Clean data]
+    B --> C[Analyse data]
+```
 
 **Classification:** GitHub
 
@@ -493,19 +662,21 @@ E = mc^2
 ```
 ````
 
-**Expected result:** The formula is displayed as a mathematical equation.
+**Rendered result:**
+
+```math
+E = mc^2
+```
 
 **Classification:** GitHub
 
 ## 9. Pitfalls
 
-Record at least three things you tested that did not work as expected. Explain what happened and how you fixed it. The examples below are suggestions; keep them only if they match what you actually observed.
+1. **Problem:** After pasting text into my profile README, four lines started with three extra spaces.  
+   **Solution:** Up to three spaces do not break Markdown, so the page still looked right. I replaced the text with a version without the spaces.
 
-1. **Problem:** Strikethrough did not work in CommonMark Dingus.  
-   **Solution:** I labelled strikethrough as GitHub-specific because GitHub supports it.
+2. **Problem:** My image examples used the placeholder URL `https://example.com/image.png`, which is not a real image file.  
+   **Solution:** I replaced it with a URL that points to a real image.
 
-2. **Problem:** The Mermaid diagram did not appear immediately.  
-   **Solution:** I saved the file and checked the rendered result on GitHub.
-
-3. **Problem:** A placeholder image URL did not display an image.  
-   **Solution:** I explained that the URL must point to an accessible image file.
+3. **Problem:** I had labelled collapsible sections as GitHub only, but `<details>` also rendered in a CommonMark test with commonmark.js, the library behind the dingus.  
+   **Solution:** I changed the label to CommonMark.
