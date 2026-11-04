@@ -157,6 +157,18 @@ diff t_all_america.txt t_file_america.txt
 > British Trade with Spanish America, 1763ï¿½1808 - by Pearce, A. J.
 ```
 
+```zsh
+wc -l t_*.txt
+```
+
+```text
+   13711 t_all_africa.txt
+   27391 t_all_america.txt
+   13711 t_file_africa.txt
+   27391 t_file_america.txt
+   82204 total
+```
+
 The claim holds exactly for the Africa file: both sorted lists contain 13,711 titles and `diff` finds no difference. It holds for the America file, too, as both lists contain 27,391 titles, but one title is stored with a different broken character encoding.
 
 ## 6. Spreadsheet damage
@@ -210,4 +222,33 @@ tail -n +2 2014-01_JA.tsv | cut -f 3 | grep -E '^[0-9]{2}-(Jan|Feb|Mar|Apr|May|J
    11632
 ```
 
-`01-Feb`, `03-Apr` and `02-Mar` are not issue numbers: the `Citation` column shows that double issues such as `1/2` and `3/4` were turned into dates, most likely by a spreadsheet program. In total, 11,632 rows are affected; values such as `SUM`, `WIN` or `Oct` are real issue labels (`4(Oct)` in the citation) and are not counted.
+```zsh
+cut -f 3,8 2014-01_JA.tsv | grep '^02-Mar' | head -n 2
+cut -f 3,8 2014-01_JA.tsv | grep '^SUM' | head -n 2
+cut -f 3,8 2014-01_JA.tsv | grep '^WIN' | head -n 2
+cut -f 3,8 2014-01_JA.tsv | grep -E '^(Oct|Apr)' | head -n 3
+```
+
+```text
+02-Mar	NORTHEAST AFRICAN STUDIES 1(2/3), 7-18. (1994)
+02-Mar	NORTHEAST AFRICAN STUDIES 1(2/3), 19-48. (1994)
+SUM	ORAL HISTORY REVIEW SEAS(SUM), 1-18. (1996)
+SUM	ORAL HISTORY REVIEW SEAS(SUM), 19-40. (1996)
+WIN	CONTEMPORARY BRITISH HISTORY 4(WIN), 1-34
+WIN	CONTEMPORARY BRITISH HISTORY 4(WIN), 35-59
+Oct	VIRGINIA MAGAZINE OF HISTORY AND BIOGRAPHY 4(Oct), 333-378. (2003)
+Oct	VIRGINIA MAGAZINE OF HISTORY AND BIOGRAPHY 4(Oct), 379-410. (2003)
+Oct	VIRGINIA MAGAZINE OF HISTORY AND BIOGRAPHY 4(Oct), 411-412. (2003)
+```
+
+```zsh
+cut -f 3,8 2014-01_JA.tsv | grep -E '^[0-9]{2}-(Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec)' | grep -c '/'
+cut -f 3,8 2014-01_JA.tsv | grep -E '^[0-9]{2}-(Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec)' | grep -v '/' | grep -c -E '\([0-9]+-[0-9]+\)'
+```
+
+```text
+11265
+367
+```
+
+`01-Feb`, `03-Apr` and `02-Mar` are not issue numbers: the `Citation` column shows double issues such as `1/2`, `2/3` and `3/4`, so a spreadsheet program most likely turned them into dates. 11,632 rows have such a date in `Issue`: 11,265 citations contain `/`, and the other 367 use a hyphen, such as `25(1-2)`. `SUM`, `WIN` and `Oct` are real issue labels, as `SEAS(SUM)`, `4(WIN)` and `4(Oct)` show, so they are not counted.
