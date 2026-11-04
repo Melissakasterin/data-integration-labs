@@ -1,0 +1,18 @@
+== Size
+-rw-r--r--@ 1 melissa  staff    20M  2 Nov. 19:04 data/raw/20261102181500.gkg.csv
+-rw-r--r--@ 1 melissa  staff   624B  4 Nov. 14:55 data/raw/pageviews_taylor_swift.json
+== Bytes of the GDELT file
+ 21037577
+== Type
+data/raw/20261102181500.gkg.csv:      ASCII text, with very long lines (16628)
+data/raw/pageviews_taylor_swift.json: JSON data
+== Lines of the GDELT file
+    1599
+== Columns of the GDELT file
+27
+== First lines of the GDELT file (columns 1 to 4 only)
+20261102181500-0	20261102181500	1	naharnet.com
+20261102181500-1	20261102181500	1	wbko.com
+20261102181500-2	20261102181500	1	nbcmontana.com
+== Pageviews, first 300 characters
+{"items":[{"project":"en.wikipedia","article":"Taylor_Swift","granularity":"monthly","timestamp":"2026070100","access":"all-access","agent":"user","views":1445059},{"project":"en.wikipedia","article":"Taylor_Swift","granularity":"monthly","timestamp":"2026080100","access":"all-access","agent":"user"
