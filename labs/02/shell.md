@@ -129,3 +129,48 @@ zsh: terminated  sleep 600
 ```
 
 The first window shows that `sleep 600` was terminated, and `ps aux | grep sleep` lists two processes because `grep sleep` runs at the same time as `ps` and matches its own command line.
+
+
+## bashcrawl
+
+### Inventory
+
+```zsh
+echo $I
+```
+
+```text
+crown,coins,sword,amulet,
+```
+
+### Three new commands
+
+- `alias ls='ls -F'` creates a shortcut, so that `ls` runs `ls -F` in this shell.
+- `ln -s <target> <name>` creates a symbolic link, a shortcut to another file or directory.
+- `pushd <directory>` changes to a directory and remembers it on a stack, and `popd` returns to the previous one.
+
+### A monster and a scroll
+
+In the room with the monster, with the alias `ls='ls -F'` active:
+
+```zsh
+ls -l
+```
+
+```text
+total 8
+drwxr-xr-x  4 melissa  staff   128 24 Mai  00:21 library/
+-rwxr-xr-x  1 melissa  staff  3408 24 Mai  00:21 monster*
+```
+
+There was no scroll in this room. For comparison, `ls -l` in the chamber before it:
+
+```text
+-rw-r--r--  1 melissa  staff   282 24 Mai  00:21 scroll
+```
+
+A monster is executable: its permissions contain `x`, so it can be run as a program with `./monster`, while a scroll has no `x` and can only be read.
+
+### Note on `bashcrawl.log`
+
+I removed two entries (203 and 204) from the log because I had pasted chat text into the terminal by accident; they caused a parse error and did not run any command.
