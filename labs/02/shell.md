@@ -147,7 +147,7 @@ crown,coins,sword,amulet,
 
 - `alias ls='ls -F'` creates a shortcut, so that `ls` runs `ls -F` in this shell.
 - `ln -s <target> <name>` creates a symbolic link, a shortcut to another file or directory.
-- `pushd <directory>` changes to a directory and remembers it on a stack, and `popd` returns to the previous one.
+- `export I=sword,$I` stores a value in the variable `I` and passes it on to the programs started from this shell.
 
 ### A monster and a scroll
 
@@ -174,3 +174,7 @@ A monster is executable: its permissions contain `x`, so it can be run as a prog
 ### Note on `bashcrawl.log`
 
 I removed two entries (203 and 204) from the log because I had pasted chat text into the terminal by accident; they caused a parse error and did not run any command.
+
+### Scrolls I did not read
+
+I did not read every scroll. After the library, I listed the game's files with `find` and went straight to `.rift/arena/pit`, where I defeated the last enemy. I skipped the rooms below `chapel` and `vault`, among others, so I did not read their scrolls.
