@@ -1,0 +1,76 @@
+  175  cd bashcrawl-master/entrance
+  176  cat scroll
+  177  echo $I\nhistory 1 > ~/dis/labs/02/history.txt
+  178  ls
+  179  cd cellar\nls
+  180  cat scroll
+  181  alias ls='ls -F'
+  182  ls
+  183  cat treasure
+  184  ./treasure
+  185  export I=amulet,$I\necho $I
+  186  export I=amulet,$I
+  187  echo $I
+  188  export I=amulet,
+  189  echo $I
+  190  cd armoury
+  191  ls
+  192  cat scroll
+  193  ./treasure
+  194  export I=sword,$I
+  195  echo $I
+  196  ./potion
+  197  export HP=15
+  198  echo $HP
+  199  cd chamber
+  200  v
+  201  ls
+  202  cat scroll
+  205  ls -l
+  206  cat statue
+  207  find ~/dis/labs/02/bashcrawl-master/entrance -type d | wc -l
+  208  ./statue
+  209  ./treasure
+  210  export I=coins,$I
+  211  echo $I
+  212  ./spell
+  213  ./spell
+  214  ln -fs ../../../chapel/courtyard/aviary/hall portal
+  215  ls
+  216  cd portal
+  217  ls
+  218  ls -l
+  219  cat monster
+  220  ./monster
+  221  pwd
+  222  echo $I\n
+  223  echo $HP
+  224  ./monster
+  225  ls
+  226  ./treasure
+  227  export I=crown,$I
+  228  v
+  229  export I=crown,$I
+  230  echo $I\n
+  231  cat corpse.USV
+  232  export I=crown,coins,sword,amulet,
+  233  echo $I
+  234  cd library
+  235  ls
+  236  cat scroll
+  237  ./tome
+  238  cat scroll
+  239  cd ~/dis/labs/02/bashcrawl-master/entrance
+  240  ls -aF
+  241  cat scrap
+  242  cd ~/dis/labs/02/bashcrawl-master/entrance && find . -path './.git' -prune -o -type f -print | grep -v '/\.[^/]*$' | sort
+  243  cat .rift/scroll .rift/arena/scroll .rift/arena/pit/scroll
+  244  cd .rift/arena/pit
+  245  ls -aF
+  246  grep -n -E 'read |grep |HP|> *end|mv |cp ' nyarlathotep | head -40
+  247  ./nyarlathotep
+  248  ./nyarlathotep
+  249  ./nyarlathotep\n
+  250  ls -aF
+  251  cat end
+  252  echo $I\n
