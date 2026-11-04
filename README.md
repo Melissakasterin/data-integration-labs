@@ -10,6 +10,8 @@ Melissa Kasterin ([Melissakasterin](https://github.com/Melissakasterin)) · [Cou
 |---|---|
 | [Lab 01](labs/01/) | Open Source Software and Open Data |
 
+| [Lab 02](labs/02/) | Command Line Interface |
+
 ### Lab 01 Files
 
 - [Markdown Cheatsheet](labs/01/cheatsheet.md)
