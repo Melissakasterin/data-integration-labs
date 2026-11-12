@@ -58,3 +58,4 @@ echo
 
 echo "== Checksum"; git hash-object --no-filters "$gdelt_target"
 
+# If the checksum differs from the one in README.md, the GDELT file has changed.
