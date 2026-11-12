@@ -55,3 +55,6 @@ echo
 # iconv accepts the file as valid UTF-8 and it has 321 non-ASCII bytes, so
 # dataset.md is right; `file` probably only checked the start of the file.
 # In SOURCES.txt, >> appends a line per file, while > would replace it.
+
+echo "== Checksum"; git hash-object --no-filters "$gdelt_target"
+
