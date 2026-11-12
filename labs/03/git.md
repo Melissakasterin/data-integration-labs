@@ -146,3 +146,66 @@ labs/03/.gitignore:1:data/raw/	data/raw/SOURCES.txt
 ```
 
 Den Kommentar im Kopf des Skripts und die Prüfsumme am Ende habe ich gleichzeitig geändert, aber mit `git add -p` getrennt committet: beim ersten Abschnitt `y`, beim zweiten `n`. Vor dem ersten Commit hat `git diff --staged` nur die Kommentarzeile gezeigt.
+
+
+## Rescue
+
+### 1. Änderung in der Datei verwerfen (`git restore`)
+
+Ich habe in `get_data.sh` die Zeile `head -c 300 "$pageviews_target"` gelöscht und gespeichert. `git diff` zeigte sie rot mit `-`. Mit `git restore get_data.sh` kam die Datei aus dem letzten Commit zurück, danach war `git diff` leer.
+
+### 2. Änderung aus dem Staging-Bereich holen (`git restore --staged`)
+
+```bash
+echo "# test" >> get_data.sh
+git add get_data.sh
+git status          # Changes to be committed: modified: get_data.sh
+git restore --staged get_data.sh
+git status          # Changes not staged for commit: modified: get_data.sh
+git restore get_data.sh
+git status          # nur noch team.md als untracked
+```
+
+`restore --staged` holt die Änderung nur aus dem Staging-Bereich, die Datei bleibt geändert. Erst `restore` ohne `--staged` verwirft die Änderung in der Datei.
+
+### 3. Tippfehler in der Commit-Message (`git commit --amend`)
+
+```text
+6961115 (HEAD -> main) Explian what a changed chekcsum means
+b960f30 (origin/main, origin/HEAD) Document Task 3 step by step in git.md
+```
+
+Nach `git commit --amend -m "Explain what a changed checksum means"`:
+
+```text
+a740d77 (HEAD -> main) Explain what a changed checksum means
+b960f30 (origin/main, origin/HEAD) Document Task 3 step by step in git.md
+```
+
+Der Hash hat sich von `6961115` zu `a740d77` geändert, weil `--amend` einen neuen Commit erzeugt. Das ist nur in Ordnung, solange der Commit noch nicht gepusht ist: `origin/main` stand noch bei `b960f30`.
+
+### 4. Gepushten Fehler rückgängig machen (`git revert`)
+
+Ich habe in der GDELT-URL das Jahr von 2026 auf 2016 geändert, committet und gepusht (`8296de0`). Ich hatte erwartet, dass das Skript abbricht. Das ist nicht passiert: GDELT 2.0 gibt es seit Februar 2015, die Datei von 2016 existiert also. Das Skript hat sie aber unter dem alten Namen gespeichert und danach weiter die alte 2026-CSV ausgewertet. Die Zahlen sahen deshalb richtig aus. Nur die Prüfsumme hat den Fehler gezeigt:
+
+```text
+== Checksum
+137ff7e50ab53f9d21f9a7d851d503222e9eb97b
+```
+
+statt `0c95a6d68f0d0cbddb6f1cf7c731374bda28ad11`. Ein Fehler ohne Abbruch ist gefährlicher als einer mit Abbruch, weil man ihn sonst nicht bemerkt.
+
+Weil der Commit schon auf GitHub war, habe ich ihn mit `git revert` rückgängig gemacht und nicht mit `reset`:
+
+```bash
+git revert --no-edit HEAD
+git push
+```
+```text
+5686327 (HEAD -> main, origin/main, origin/HEAD) Revert "Switch GDELT file to 2016"
+8296de0 Switch GDELT file to 2016
+a740d77 Explain what a changed checksum means
+b960f30 Document Task 3 step by step in git.md
+```
+
+Danach war die Prüfsumme wieder `0c95a6d68f0d0cbddb6f1cf7c731374bda28ad11`. Der fehlerhafte Commit bleibt in der Geschichte sichtbar, der Revert-Commit macht ihn rückgängig.
