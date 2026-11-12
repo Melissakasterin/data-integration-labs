@@ -105,3 +105,44 @@ Your branch is up to date with 'origin/main'.
 
 Vor dem Push ist mein lokales `main` einen Commit weiter als `origin/main` auf GitHub. Nach dem Push sind beide auf demselben Stand.
 
+
+## Step by step
+
+Ich habe mein Download-Skript aus Lab 2 nach `labs/03` kopiert und Schritt für Schritt unter Versionskontrolle gestellt. Jeder Commit enthält genau eine Änderung:
+
+```bash
+git log --oneline -- .
+```
+```text
+45b7be7 (HEAD -> main) Add Lab 3 README explaining how to restore the raw data
+593a2b3 Print a checksum of the downloaded GDELT file to detect changes at the source
+418308c Explain in the header where to run the script and where files are saved
+d78fa19 Ignore data/raw/ so downloaded raw data stays out of the repository
+24e3a3c Copy the download script from lab 2
+9628a89 (origin/main, origin/HEAD) Fill in predictions and answers for all four rounds in graph.md
+8f25c3d Add git status before and after push to git.md
+ce206b8 Document Git setup, commit history and e-mail check for Lab 3 Task 2
+5657d76 Add commit graph predictions and screenshot for Lab 3 Task 1
+```
+
+Nach dem ersten Lauf von `./get_data.sh` hat `git status` den Ordner `data/` als „Untracked“ angezeigt. Mit `data/raw/` in der `.gitignore` ist er verschwunden. Git ignoriert ihn jetzt:
+
+```bash
+git status --ignored
+```
+```text
+Ignored files:
+  (use "git add -f <file>..." to include in what will be committed)
+	data/
+```
+
+`git check-ignore -v data/raw/*` zeigt, welche Regel jede Datei ignoriert:
+
+```text
+labs/03/.gitignore:1:data/raw/	data/raw/20261102181500.gkg.csv
+labs/03/.gitignore:1:data/raw/	data/raw/20261102181500.gkg.csv.zip
+labs/03/.gitignore:1:data/raw/	data/raw/pageviews_taylor_swift.json
+labs/03/.gitignore:1:data/raw/	data/raw/SOURCES.txt
+```
+
+Den Kommentar im Kopf des Skripts und die Prüfsumme am Ende habe ich gleichzeitig geändert, aber mit `git add -p` getrennt committet: beim ersten Abschnitt `y`, beim zweiten `n`. Vor dem ersten Commit hat `git diff --staged` nur die Kommentarzeile gezeigt.
