@@ -80,3 +80,28 @@ Your branch is up to date with 'origin/main'.
 Den `git status` vor dem Push habe ich bei diesem Commit vergessen. Ich habe ihn beim nächsten Push nachgeholt (siehe unten).
 
 Mein Avatar steht auf GitHub neben dem Commit `5657d76`, weil die `noreply`-Adresse mit meinem Profil verknüpft ist. Anders als meine früheren Browser-Commits hat er kein „Verified“: Die hat GitHub beim Erstellen im Browser signiert, auf meinem Computer habe ich keine Signatur eingerichtet.
+
+### `git status` vor und nach dem Push
+
+Nachgeholt beim Commit `ce206b8` (diese Datei).
+
+Vor dem Push:
+```text
+On branch main
+Your branch is ahead of 'origin/main' by 1 commit.
+  (use "git push" to publish your local commits)
+```
+
+```text
+To https://github.com/Melissakasterin/data-integration-labs.git
+   5657d76..ce206b8  main -> main
+```
+
+Nach dem Push:
+```text
+On branch main
+Your branch is up to date with 'origin/main'.
+```
+
+Vor dem Push ist mein lokales `main` einen Commit weiter als `origin/main` auf GitHub. Nach dem Push sind beide auf demselben Stand.
+
