@@ -1,7 +1,7 @@
 #!/bin/bash
 # get_data.sh: download one GDELT GKG file and one Wikimedia Pageviews
 # request into data/raw/ and print a first look at the data.
-# Usage: ./get_data.sh
+# Usage: run ./get_data.sh inside labs/03; the files are saved in labs/03/data/raw/.
 #
 # Sources and licences:
 # GDELT 2.0 Global Knowledge Graph (https://www.gdeltproject.org/data.html)
