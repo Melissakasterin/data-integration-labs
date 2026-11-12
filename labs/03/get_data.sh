@@ -11,7 +11,7 @@
 # von der Wikimedia Foundation, CC0 1.0
 # (https://creativecommons.org/publicdomain/zero/1.0/).
 
-gdelt_url="https://data.gdeltproject.org/gdeltv2/20161102181500.gkg.csv.zip"
+gdelt_url="https://data.gdeltproject.org/gdeltv2/20261102181500.gkg.csv.zip"
 gdelt_target="data/raw/20261102181500.gkg.csv.zip"
 pageviews_url="https://wikimedia.org/api/rest_v1/metrics/pageviews/per-article/en.wikipedia/all-access/user/Taylor_Swift/monthly/2026070100/2026103100"
 pageviews_target="data/raw/pageviews_taylor_swift.json"
